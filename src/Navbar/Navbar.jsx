@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
@@ -8,6 +10,18 @@ const Navbar = () => {
              <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-to-favorite'>Add Tourists Spot</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-to-favorite'>My List</NavLink></li>
     </>
+
+const {user,logOut} = useContext(AuthContext)
+const handleLogOut = () =>{
+    logOut()
+    .then(()=>{
+      console.log('logout success')
+      
+    })
+    .catch(error=>{
+      console.error(error)
+    })
+  }
     return (
         <div className="navbar bg-blue-300 lg:w-[1320px] md:w-[750px] w-[365px]  mx-auto">
         <div className="navbar-start">
@@ -48,9 +62,17 @@ const Navbar = () => {
     </div>
     <button onClick={handleLogOut} className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Sign Out</button>
     </> : 
-  <Link to={'/login'}>
+    <>
+    <div>
+    <Link to={'/login'}>
   <button className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Login</button>
   </Link>
+  <Link to={'/register'}>
+  <button className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Register</button>
+  </Link>
+    </div>
+    </>
+  
   
   }
       </div>  

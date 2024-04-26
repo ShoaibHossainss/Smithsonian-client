@@ -1,4 +1,6 @@
+import { signOut } from "firebase/auth";
 import { createContext, useState } from "react";
+import auth from "../../firebase.config";
 
 export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
@@ -7,11 +9,11 @@ const AuthProvider = ({children}) => {
      
     const logOut = () =>{
         setLoader(true);
-        return (auth)
+        return signOut(auth)
       }
 
 
-    const authInfo = {user}
+    const authInfo = {user,logOut}
     return (
        
         <AuthContext.Provider value={authInfo}>
