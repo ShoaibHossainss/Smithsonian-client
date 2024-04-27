@@ -11,6 +11,9 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import Home from './Home/Home';
 import Register from './Register/Register';
 import Login from './Login/Login';
+import AllTourist from './AllTourist/AllTourist';
+import AddTourist from './AddTourist/AddTourist';
+import MyList from './MyList/MyList';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,18 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
+      {
+        path: '/all-tourists-spot',
+        element: <AllTourist></AllTourist>
+      },
+      {
+        path: '/add-tourists-spot',
+        element: <AddTourist></AddTourist>
+      },
+      {
+        path: '/my-list',
+        element: <MyList></MyList>
+      }
     ]
   },
 ]);

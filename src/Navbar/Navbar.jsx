@@ -6,9 +6,9 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
     const links = <>
              <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/'>Home</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/update-profile'>All Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-to-favorite'>Add Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-to-favorite'>My List</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/all-tourists-spot'>All Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-tourists-spot'>Add Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/my-list'>My List</NavLink></li>
     </>
 
 const {user,logOut} = useContext(AuthContext)
@@ -65,7 +65,7 @@ const handleLogOut = () =>{
     <>
     <div>
     <Link to={'/login'}>
-  <button className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Login</button>
+  <button className="btn lg:mr-4 btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Login</button>
   </Link>
   <Link to={'/register'}>
   <button className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Register</button>
