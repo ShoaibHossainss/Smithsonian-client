@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const MyList = () => {
     const {user} = useContext(AuthContext)
     const [list,setList] = useState([])
+    
+    
     useEffect(()=>{
         fetch(`http://localhost:5000/my-list/${user?.email}`)
         .then(res=>res.json())
@@ -14,6 +16,22 @@ const MyList = () => {
         })
     },
     [user])
+
+
+    const handleDelete = _id =>{
+        console.log('works',_id)
+        fetch(`http://localhost:5000/delete/${_id}`,{
+            method: 'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            
+            if(data.deletedCount>0){
+                alert('sucess')
+                console.log(data)
+            }
+        })
+    }
     return (
         <div>
             <h3>Nice</h3>
@@ -32,7 +50,7 @@ const MyList = () => {
                         <div className="flex">
                            <Link to={`/update/${p._id}`}>
                            <button className="btn btn-primary">Update</button></Link>
-                            <button className="btn btn-primary">Delete</button>
+                            <button onClick={() => handleDelete(p._id)} className="btn btn-primary">Delete</button>
                         </div>
                         </div>
                        
