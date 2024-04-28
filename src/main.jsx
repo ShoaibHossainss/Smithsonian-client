@@ -15,6 +15,7 @@ import AllTourist from './AllTourist/AllTourist';
 import AddTourist from './AddTourist/AddTourist';
 import MyList from './MyList/MyList';
 import Update from './Update/Update';
+import SpotDetails from './SpotDetails/SpotDetails';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/all-tourists-spot',
         element: <AllTourist></AllTourist>,
+        loader: () => fetch('http://localhost:5000/spots')
+      },
+      {
+        path: '/spot-details/:id',
+        element: <SpotDetails></SpotDetails>,
         loader: () => fetch('http://localhost:5000/spots')
       },
       {

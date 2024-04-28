@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllTourist = () => {
@@ -17,12 +17,15 @@ const AllTourist = () => {
                   <p>Location : {p.location}</p>
                   <p>Visitors Per Year : {p.totalVisitorsPerYear}</p>
                   <div className="card-actions justify-end">
+                    <Link to={`/spot-details/${p._id}`}>
                     <button className="btn btn-primary">View Details</button>
+                    </Link>
                   </div>
                 </div>
               </div>
             ))
          }
+        
             
         </div>
     );

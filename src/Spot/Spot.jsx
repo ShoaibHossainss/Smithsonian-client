@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Spot = ({spot}) => {
-    const {image,country_name,tourists_spot_name,totalVisitorsPerYear,location} = spot
+    const {_id,image,country_name,tourists_spot_name,totalVisitorsPerYear,location} = spot
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,7 +13,9 @@ const Spot = ({spot}) => {
     <p>Location : {location}</p>
     <p>Visitors Per Year : {totalVisitorsPerYear}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">View Details</button>
+    <Link to={`/spot-details/${_id}`}>
+                    <button className="btn btn-primary">View Details</button>
+                    </Link>
     </div>
   </div>
 </div>
