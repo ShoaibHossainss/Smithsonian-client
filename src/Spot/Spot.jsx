@@ -3,7 +3,7 @@ import React from 'react';
 const Spot = ({spot}) => {
     const {image,country_name,tourists_spot_name,totalVisitorsPerYear,location} = spot
     return (
-        <div className='grid grid-cols-3'>
+        <div>
             <div className="card w-96 bg-base-100 shadow-xl">
   <figure><img src={image} alt="Shoes" /></figure>
   <div className="card-body">

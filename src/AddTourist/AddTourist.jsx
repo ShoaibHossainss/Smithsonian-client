@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const AddTourist = () => {
+  const {user} = useContext(AuthContext)
   const handleAddSpot = e => {
     e.preventDefault()
     const form = e.target;
@@ -13,10 +16,13 @@ const AddTourist = () => {
     const seasonality = form.seasonality.value
     const travel_time = form.travel_time.value
     const totalVisitorsPerYear = form.totalVisitorsPerYear.value
+    const email = user.email
+    const user_name = user.displayName
     
     
     
-    const newSpot = {tourists_spot_name,image,country_name,location,description,average_cost,seasonality,travel_time,totalVisitorsPerYear}
+    
+    const newSpot = {tourists_spot_name,image,country_name,location,description,average_cost,seasonality,travel_time,totalVisitorsPerYear,user_name,email}
     console.log(newSpot)
     fetch('http://localhost:5000/spots',{
       method: 'POST',
@@ -145,7 +151,7 @@ const AddTourist = () => {
   </label>
   <label className="input-group">
     
-    <input type="text"  name='user_name' placeholder="Quantity" className="input input-bordered w-full" />
+    <input type="text"  name='user_name' defaultValue={user.displayName} placeholder="Quantity" className="input input-bordered w-full" />
   </label>
 </div>
 <div className="form-control lg:w-1/2 ">
@@ -154,7 +160,7 @@ const AddTourist = () => {
   </label>
   <label className="input-group">
     
-    <input type="text" name='email' placeholder="Name" className="input input-bordered w-full" />
+    <input type="text" name='email' placeholder="Name" defaultValue={user.email} className="input input-bordered w-full" />
   </label>
 </div>
             </div>

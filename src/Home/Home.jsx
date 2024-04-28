@@ -8,9 +8,12 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-           {
+            <div className='grid grid-cols-3'>
+            {
             spots.map(spot=><Spot key={spot._id} spot={spot}></Spot>)
            }
+            </div>
+           
            <Footer></Footer> 
         </div>
     );
