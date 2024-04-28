@@ -14,6 +14,7 @@ import Login from './Login/Login';
 import AllTourist from './AllTourist/AllTourist';
 import AddTourist from './AddTourist/AddTourist';
 import MyList from './MyList/MyList';
+import Update from './Update/Update';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path: '/my-list',
         element: <MyList></MyList>
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
       }
     ]
   },

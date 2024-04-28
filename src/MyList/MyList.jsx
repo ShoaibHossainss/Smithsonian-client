@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const MyList = () => {
     const {user} = useContext(AuthContext)
     const [list,setList] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/my-list/${user.email}`)
+        fetch(`http://localhost:5000/my-list/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setList(data)
@@ -28,7 +29,13 @@ const MyList = () => {
                         <p>Location : {p.location}</p>
                         <p>Average Cost : {p.average_cost}</p>
                         <p>Travel Time : {p.travel_time}</p>
+                        <div className="flex">
+                           <Link to={`/update/${p._id}`}>
+                           <button className="btn btn-primary">Update</button></Link>
+                            <button className="btn btn-primary">Delete</button>
                         </div>
+                        </div>
+                       
 
   </div>
                 ))
