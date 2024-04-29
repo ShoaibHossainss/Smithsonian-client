@@ -33,12 +33,7 @@ const AllTourist = () => {
       setSortSpot(storeCat);
      
     }
-    const handleCost = () =>{
-      setAllSpot(spots)
-       
-     
-      
-    }
+   
     
      
     console.log(spots)

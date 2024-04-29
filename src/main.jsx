@@ -17,6 +17,7 @@ import MyList from './MyList/MyList';
 import Update from './Update/Update';
 import SpotDetails from './SpotDetails/SpotDetails';
 import Private from './Private/Private';
+import Country from './Country/Country';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: '/all-tourists-spot',
         element: <AllTourist></AllTourist>,
-        // loader: () => fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots')
+        loader: () => fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots')
       },
       {
         path: '/spot-details/:id',
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
         element: <Private>
           <MyList></MyList>
         </Private>
+      },
+      {
+        path: '/country',
+        element: <Country></Country>,
+        
       },
       {
         path: '/update/:id',

@@ -2,12 +2,18 @@ import { Link, useLoaderData, useParams,} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 
+
+
+
 const SpotDetails = () => {
+  
     const spots = useLoaderData();
     const {id} = useParams();
     const spot = spots.find(spot=>spot._id===id)
-    console.log(spot)
+    console.log(spot);
+    
     return (
+      
         <div>
           <div className="lg:grid lg:grid-cols-2 lg:mx-auto lg:mt-16 mt-8">
         
@@ -40,6 +46,7 @@ const SpotDetails = () => {
       
       </div>
       <ToastContainer />
+      
       </div>
         </div>
     );

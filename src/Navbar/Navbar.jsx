@@ -5,10 +5,10 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
     const links = <>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/'>Home</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/all-tourists-spot'>All Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/add-tourists-spot'>Add Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg'} to='/my-list'>My List</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/'>Home</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/all-tourists-spot'>All Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/add-tourists-spot'>Add Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/my-list'>My List</NavLink></li>
     </>
 
 const {user,logOut} = useContext(AuthContext)
@@ -24,7 +24,7 @@ const handleLogOut = () =>{
     })
   }
     return (
-        <div className="navbar bg-blue-300 lg:w-[1320px] md:w-[750px] w-[365px]  mx-auto">
+        <div className="navbar bg-[#333F48] lg:w-[1320px] md:w-[750px] w-[365px]  mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -34,7 +34,7 @@ const handleLogOut = () =>{
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Smithsonian</a>
+          <a className="btn btn-ghost text-xl text-white">Smithsonian</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

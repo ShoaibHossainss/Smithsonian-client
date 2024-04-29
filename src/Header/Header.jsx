@@ -24,7 +24,10 @@ const Header = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         
-        <SwiperSlide><img className='rounded-3xl ' src={Slide1} alt="" /></SwiperSlide>
+        <SwiperSlide><div>
+        <img className='rounded-3xl ' src={Slide1} alt="" />
+        <h3 className='-translate-y-10 text-center text-white'>Nice</h3>
+          </div></SwiperSlide>
         <SwiperSlide><img className='rounded-3xl'  src={Slide2} alt="" /></SwiperSlide>
         <SwiperSlide><img className='rounded-3xl '  src={Slide3} alt="" /></SwiperSlide>
         <SwiperSlide><img className='rounded-3xl '  src={Slide4} alt="" /></SwiperSlide>
