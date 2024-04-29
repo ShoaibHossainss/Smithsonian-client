@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 
 const AddTourist = () => {
@@ -24,7 +27,7 @@ const AddTourist = () => {
     
     const newSpot = {tourists_spot_name,image,country_name,location,description,average_cost,seasonality,travel_time,totalVisitorsPerYear,user_name,email}
     console.log(newSpot)
-    fetch('http://localhost:5000/spots',{
+    fetch('https://assignment-10-server-delta-gray.vercel.app/spots',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -43,6 +46,7 @@ const AddTourist = () => {
   }
     return (
         <div>
+          <Navbar></Navbar>
             <form onSubmit={handleAddSpot}>
             <div className='lg:flex'>
             <div className="form-control lg:w-1/2 ">
@@ -67,12 +71,22 @@ const AddTourist = () => {
             <div className='lg:flex'>
             <div className="form-control lg:w-1/2 ">
   <label className="label">
-    <span className="label-text">Country Name</span>
+    Country
   </label>
-  <label className="input-group">
+  
+  <select className="select select-bordered join-item" name='country_name' required>
+  <option disabled selected>Select Country</option>
+    <option>Bangladesh</option>
+    <option>Thailand</option>
+    <option>Malaysia</option>
+    <option>Indonesia</option>
+    <option>Vietnam</option>
+    <option>Cambodia</option>
+  </select>
     
-    <input type="text" name='country_name' placeholder="Name" className="input input-bordered w-full" />
-  </label>
+    
+    
+ 
 </div>
             <div className="form-control lg:w-1/2 ml-4">
   <label className="label">
@@ -166,8 +180,10 @@ const AddTourist = () => {
             </div>
             <input type="submit" value="Add" className="btn btn-primary w-full" />
             </form>
-            
-            
+            <Link to='/'>
+      <button className="btn btn-primary mb-8 mt-8">Go Back</button>
+      </Link>
+            <Footer></Footer>
         </div>
     );
 };

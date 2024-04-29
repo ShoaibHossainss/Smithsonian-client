@@ -11,13 +11,16 @@ import Navbar from '../Navbar/Navbar';
 
 
 
+
+
 const Login = () => {
     const {loginUser} = useContext(AuthContext)
   const location = useLocation();
   const [showPass,setShowPass] = useState(false)
   const navigate = useNavigate()
   const provider = new GoogleAuthProvider();
-  const gitHubProvider = new GithubAuthProvider();
+  const gitProvider = new GithubAuthProvider();
+  
   console.log(location)
   const handleClick = () =>{
     signInWithPopup(auth,provider)
@@ -33,23 +36,26 @@ const Login = () => {
     
 })
 }
+
 const handleGitHub = () =>{
-    signInWithPopup(auth,gitHubProvider)
-    .then(result=>{
+  signInWithPopup(auth,gitProvider)
+  .then(result=>{
+    
+      const user = result.user;
+      console.log(user)
+      toast.success('Login Successful')
+      navigate(location?.state?location.state:'/')
       
-        const user = result.user;
-        console.log(user)
-        toast.success('Login Successful')
-        navigate(location?.state?location.state:'/')
-        
-       
-    })
-    .catch(error=>{
-        console.log(error)
-        toast.error('Invalid Credentials')
-       
-    })
+     
+  })
+  .catch(error=>{
+      console.log(error)
+      toast.error('Invalid Credentials')
+     
+  })
 }
+
+
 
 const handleLogin = e =>{
     e.preventDefault()

@@ -1,4 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 
 
 const Update = () => {
@@ -23,7 +26,7 @@ const Update = () => {
         
         const updateSpot = {tourists_spot_name,image,country_name,location,description,average_cost,seasonality,travel_time,totalVisitorsPerYear}
         console.log(updateSpot)
-        fetch(`http://localhost:5000/spots/${loader._id}`,{
+        fetch(`https://assignment-10-server-kappa-ebon.vercel.app/spots/${loader._id}`,{
           method: 'PUT',
           headers: {
             'content-type': 'application/json'
@@ -31,17 +34,33 @@ const Update = () => {
           body: JSON.stringify(updateSpot)
         })
         .then(res=>res.json())
-          .then(data=>{
-            console.log(data)
+        .then(data=>{
             if(data.modifiedCount>0){
-              alert('added')
-             
+              Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, update it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Updated!",
+                    text: "Your spot has been updated.",
+                    icon: "success"
+                  });
+                }
+              });
             }
-            
-          })
+          });
+        
       }
+    
     return (
         <div>
+          <Navbar></Navbar>
              <form onSubmit={handleUpdate}>
             <div className='lg:flex'>
             <div className="form-control lg:w-1/2 ">
@@ -148,6 +167,10 @@ const Update = () => {
             </div>
             <input type="submit" value="Update" className="btn btn-primary w-full" />
             </form>
+            <Link to='/'>
+      <button className="btn btn-primary mb-8 mt-8">Go Back</button>
+      </Link>
+      <Footer></Footer>
         </div>
     );
 };

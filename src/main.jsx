@@ -16,6 +16,7 @@ import AddTourist from './AddTourist/AddTourist';
 import MyList from './MyList/MyList';
 import Update from './Update/Update';
 import SpotDetails from './SpotDetails/SpotDetails';
+import Private from './Private/Private';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
     element: <Home></Home>,
-    loader: () => fetch('http://localhost:5000/spots')
+    loader: () => fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots')
       },
       {
         path: '/login',
@@ -38,25 +39,33 @@ const router = createBrowserRouter([
       {
         path: '/all-tourists-spot',
         element: <AllTourist></AllTourist>,
-        loader: () => fetch('http://localhost:5000/spots')
+        // loader: () => fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots')
       },
       {
         path: '/spot-details/:id',
-        element: <SpotDetails></SpotDetails>,
-        loader: () => fetch('http://localhost:5000/spots')
+        element: <Private>
+          <SpotDetails></SpotDetails>
+        </Private>,
+        loader: () => fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots')
       },
       {
         path: '/add-tourists-spot',
-        element: <AddTourist></AddTourist>
+        element: <Private>
+          <AddTourist></AddTourist>
+        </Private>
       },
       {
         path: '/my-list',
-        element: <MyList></MyList>
+        element: <Private>
+          <MyList></MyList>
+        </Private>
       },
       {
         path: '/update/:id',
-        element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        element: <Private>
+          <Update></Update>
+        </Private>,
+        loader: ({params}) => fetch(`https://assignment-10-server-kappa-ebon.vercel.app/spots/${params.id}`)
       }
     ]
   },

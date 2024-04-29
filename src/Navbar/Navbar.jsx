@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const links = <>
@@ -16,6 +16,7 @@ const handleLogOut = () =>{
     logOut()
     .then(()=>{
       console.log('logout success')
+      toast.success('Logout Successful')
       
     })
     .catch(error=>{
@@ -42,26 +43,26 @@ const handleLogOut = () =>{
         </div>
         <div className="navbar-end">
         {
-    user ? <>
+ user ? <>
   
-  <div className="dropdown dropdown-hover">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          
-          {user.photoURL? <img alt="" src={user.photoURL} /> : 
-          <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
-            
-          }
+ <div className="dropdown dropdown-hover">
+     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+       <div className="w-10 rounded-full">
          
-        </div>
-      </div>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-       
-        <li className="uppercase">{user.displayName}</li>
-      </ul>
-    </div>
-    <button onClick={handleLogOut} className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Sign Out</button>
-    </> : 
+         {user.photoURL? <img src={user.photoURL} alt=""  /> : 
+         <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+           
+         }
+        
+       </div>
+     </div>
+     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      
+       <li className="uppercase">{user.displayName}</li>
+     </ul>
+   </div>
+   <button onClick={handleLogOut} className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Sign Out</button>
+   </> : 
     <>
     <div>
     <Link to={'/login'}>
