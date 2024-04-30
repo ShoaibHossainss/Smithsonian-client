@@ -61,15 +61,15 @@ const handleLogOut = () =>{
        <li className="uppercase">{user.displayName}</li>
      </ul>
    </div>
-   <button onClick={handleLogOut} className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Sign Out</button>
+   <button onClick={handleLogOut} className="btn bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">Sign Out</button>
    </> : 
     <>
     <div>
     <Link to={'/login'}>
-  <button className="btn lg:mr-4 btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Login</button>
+  <button className="btn lg:mr-4 bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">Login</button>
   </Link>
   <Link to={'/register'}>
-  <button className="btn btn-success font-sans lg:font-semibold lg:text-lg text-white rounded-lg">Register</button>
+  <button className="btn bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">Register</button>
   </Link>
     </div>
     </>

@@ -82,7 +82,7 @@ const handleLogin = e =>{
 
 
     return (
-        <div className="bg-blue-300 " >
+        <div className="bg-[#f3f6fd] " >
             <Navbar></Navbar>
             <div className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10 bg-white rounded-2xl">
             <form   onSubmit={handleLogin} className=" ">
@@ -114,7 +114,7 @@ const handleLogin = e =>{
           </label>
         </div>
         <div className="form-control mt-6 px-10">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-[#007bff] text-white">Login</button>
         </div>
        
         
@@ -122,11 +122,11 @@ const handleLogin = e =>{
       <hr className="mt-4 w-[75%] mx-auto border-[1px] border-dashed border-[#0d0d0d1a]" />
       <div className="mt-4 gap-2 pb-8 mx-auto items-center flex flex-col justify-items-center">
              
-           <button onClick={handleClick} className="btn btn-success text-white rounded-lg md:w-[350px] w-[285px]">
+           <button onClick={handleClick} className="btn bg-[#007bff] text-white rounded-lg md:w-[350px] w-[285px]">
            <FaGoogle />
            Login With Google
            </button>
-           <button onClick={handleGitHub} className="btn btn-success text-white rounded-lg md:w-[350px] w-[285px]">
+           <button onClick={handleGitHub} className="btn bg-[#007bff] text-white rounded-lg md:w-[350px] w-[285px]">
            <FaGoogle />
            Login With GitHub
            </button>
@@ -135,7 +135,7 @@ const handleLogin = e =>{
             </div>
     
             <p className="px-10 text-center pb-4">no account? please <Link to={'/register'}>
-              <button className="btn btn-secondary font-sans lg:font-semibold lg:text-lg text-white rounded-lg">
+              <button className="btn bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">
               Register
               </button>
               </Link></p>
