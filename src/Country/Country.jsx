@@ -18,7 +18,7 @@ const Country = () => {
     return (
         
       
-        <div className="mx-auto lg:w-[1320px] md:w-[750px] w-[365px] mb-10">
+        <div className="mx-auto lg:w-[1320px] md:w-[750px] w-full mb-10">
             <h3 className="text-center text-black text-2xl mb-4 mt-10">Country</h3>
             <p className="text-center text-black text-xl mb-4">Browse any country to see their best spot</p>
             <div className="grid grid-cols-3 gap-6 ">

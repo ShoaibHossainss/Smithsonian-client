@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 
@@ -23,37 +24,42 @@ const MyList = () => {
 
 
     const handleDelete = _id =>{
-        console.log('works',_id)
-        fetch(`https://assignment-10-server-kappa-ebon.vercel.app/${_id}`,{
-            method: 'DELETE'
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            
-            if(data.deletedCount>0){
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      Swal.fire({
-                        title: "Deleted!",
-                        text: "Your spot has been deleted.",
-                        icon: "success"
-                      });
-                    }
-                  });
-                console.log(data)
-            }
-        })
-    }
+      console.log('works',_id)
+      fetch(`https://assignment-10-server-kappa-ebon.vercel.app/delete/${_id}`,{
+          method: 'DELETE'
+      })
+      .then(res=>res.json())
+      .then(data=>{
+          
+          if(data.deletedCount>0){
+              Swal.fire({
+                  title: "Are you sure?",
+                  text: "You won't be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire({
+                      title: "Deleted!",
+                      text: "Your spot has been deleted.",
+                      icon: "success"
+                    });
+                  }
+                });
+              console.log(data)
+          }
+      })
+  }
     return (
-        <div>
+        <div className="mx-auto">
+           <Helmet>
+                
+                <title>My List</title>
+                
+            </Helmet>
             <Navbar></Navbar>
             {
                 list.map(p=>(

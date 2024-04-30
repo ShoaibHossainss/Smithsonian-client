@@ -2,6 +2,7 @@ import { Link, useLoaderData, useParams,} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet";
 
 
 
@@ -17,10 +18,20 @@ const SpotDetails = () => {
     return (
       
         <div>
+           <Helmet>
+                
+                <title>Spot Details</title>
+                
+            </Helmet>
           <Navbar></Navbar>
+         <div className="items-center mx-auto text-center mt-4">
+         <a className="my-anchor-element">◕‿‿◕</a>
+<a className="my-anchor-element">◕‿‿◕</a>
+<a className="my-anchor-element">◕‿‿◕</a>
+         </div>
           <div className="lg:grid lg:grid-cols-2 lg:mx-auto lg:mt-16 mt-8 mb-8">
-        
-        <div className=" bg-[#1313130D] rounded-2xl ml-3">
+         
+        <div className=" bg-[#1313130D] rounded-2xl lg:ml-3">
         <img className="p-10 px-4 lg:mb-1 mb-10" src={spot.image} alt="" />
         </div>
         

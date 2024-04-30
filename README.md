@@ -1,8 +1,22 @@
-# React + Vite
+Smithsonian
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+One Of The Best Tourism Management Website
 
-Currently, two official plugins are available:
+Live Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Firebase : https://assignment-10-66e1f.web.app/
+
+Features
+
+- Backend: We use backend server for storing data.
+- MongoDB: All data will be stored in MongoDB server.
+- React Router: Using react router for better experience.
+- Context API: Using this to manege global state and data across all the components.
+- Private Routes: Using private routes to provide secure experience for our users.
+- Responsive: Website was user friendly for any kind of device.
+
+NPM Packages 
+
+- React Helmet : Using this for hassle free experience.
+- React Tooltip: We use it for better understanding
+- Swiper Slider: Using swiper slider at header section.

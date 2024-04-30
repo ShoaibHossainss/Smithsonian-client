@@ -6,6 +6,7 @@ import { FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -52,6 +53,11 @@ const Register = () => {
     }
     return (
         <div>
+           <Helmet>
+                
+                <title>Register</title>
+                
+            </Helmet>
           <Navbar></Navbar>
               <form onSubmit={handleRegister} className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd]">
                 <h1 className="text-center text-black mb-2 pt-8">Register your account</h1>

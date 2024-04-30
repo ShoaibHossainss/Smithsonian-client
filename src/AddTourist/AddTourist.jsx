@@ -3,6 +3,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const AddTourist = () => {
@@ -27,7 +29,7 @@ const AddTourist = () => {
     
     const newSpot = {tourists_spot_name,image,country_name,location,description,average_cost,seasonality,travel_time,totalVisitorsPerYear,user_name,email}
     console.log(newSpot)
-    fetch('https://assignment-10-server-delta-gray.vercel.app/spots',{
+    fetch('https://assignment-10-server-kappa-ebon.vercel.app/spots',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -38,7 +40,23 @@ const AddTourist = () => {
     .then(data=>{
       console.log(data)
       if(data.insertedId){
-        alert('added')
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, add it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Added!",
+              text: "Your data has been added.",
+              icon: "success"
+            });
+          }
+        });
         form.reset()
       }
       
@@ -46,6 +64,11 @@ const AddTourist = () => {
   }
     return (
         <div>
+           <Helmet>
+                
+                <title>Add Spot</title>
+                
+            </Helmet>
           <Navbar></Navbar>
             <form onSubmit={handleAddSpot} className="mx-auto lg:w-[1320px] md:w-[750px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd] p-4">
             <div className='lg:flex mb-4'>
@@ -58,7 +81,7 @@ const AddTourist = () => {
     <input type="text" name='tourists_spot_name' placeholder="Name" className="input input-bordered w-full" />
   </label>
 </div>
-            <div className="form-control lg:w-1/2 ml-4">
+            <div className="form-control lg:w-1/2 lg:ml-4">
   <label className="label">
     <span className="label-text">Image URL</span>
   </label>
@@ -88,7 +111,7 @@ const AddTourist = () => {
     
  
 </div>
-            <div className="form-control lg:w-1/2 ml-4 lg:translate-y-1">
+            <div className="form-control lg:w-1/2 lg:ml-4 lg:translate-y-1">
   <label className="label">
     <span className="label-text">Location</span>
   </label>
@@ -112,7 +135,7 @@ const AddTourist = () => {
     <input type="number" name='average_cost' placeholder="Name" className="input input-bordered w-full" />
   </label>
 </div>
-            <div className="form-control lg:w-1/2 ml-4 lg:-translate-y-1">
+            <div className="form-control lg:w-1/2 lg:ml-4 lg:-translate-y-1">
   <label className="label">
     Seasonality
   </label>
@@ -147,7 +170,7 @@ const AddTourist = () => {
   
  
 </div>
-            <div className="form-control lg:w-1/2 ml-4 lg:mt-1">
+            <div className="form-control lg:w-1/2 lg:ml-4 lg:mt-1">
   <label className="label">
     <span className="label-text">Total Visitors Per Year</span>
   </label>
@@ -168,7 +191,7 @@ const AddTourist = () => {
     <input type="text"  name='user_name' defaultValue={user.displayName} placeholder="Quantity" className="input input-bordered w-full" />
   </label>
 </div>
-<div className="form-control lg:w-1/2 ml-4">
+<div className="form-control lg:w-1/2 lg:ml-4">
   <label className="label">
     <span className="label-text">User Email</span>
   </label>

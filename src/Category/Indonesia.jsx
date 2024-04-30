@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
+import { Helmet } from "react-helmet";
 
 
 const Indonesia = () => {
@@ -26,10 +27,15 @@ const Indonesia = () => {
     return (
       
         <div>
+           <Helmet>
+                
+                <title>Indonesia</title>
+                
+            </Helmet>
         <Navbar></Navbar> 
 
                  {
-        items.map(p=><div key={p._id} className="card w-96 bg-base-100  mx-auto mt-10 mb-10">
+        items.map(p=><div key={p._id} className="card w-96 shadow-xl bg-base-100  mx-auto mt-10 mb-10">
         <figure><img src={p.image} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title pb-2">Country : {p.country_name}</h2>
