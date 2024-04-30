@@ -14,6 +14,8 @@ const AllTourist = () => {
       setSortSpot(spots);
       setAllSpot(spots);
     },[spots])
+
+    
    
     const handleMaximumCost = () =>{
       const storeCat = sortSpot.sort((a,b)=>{
@@ -41,8 +43,8 @@ const AllTourist = () => {
     return (
         <div>
           <Navbar></Navbar>
-          <details className="dropdown">
-  <summary className="m-1 btn">open or close</summary>
+          <details className="dropdown mt-4 mb-4">
+  <summary className="m-1 btn bg-[#007bff] text-white">Sort</summary>
   <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
     
     <li onClick={()=>handleMaximumCost()}><a>Maximum</a></li>
@@ -50,7 +52,7 @@ const AllTourist = () => {
     
   </ul>
 </details>
-          <div className="grid grid-cols-3">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto gap-10 lg:w-[1320px] md:w-[750px] w-[365px]">
           {
             sortSpot.map(p=>(
                 <div key={p._id}  className="card w-96 bg-base-100 shadow-xl">
@@ -61,9 +63,10 @@ const AllTourist = () => {
                   <p>Location : {p.location}</p>
                   <p>Visitors Per Year : {p.totalVisitorsPerYear}</p>
                   <p>Average Cost : {p.average_cost}</p>
+                  <p>Travel Time : {p.travel_time}</p>
                   <div className="card-actions justify-end">
                     <Link to={`/spot-details/${p._id}`}>
-                    <button className="btn btn-primary">View Details</button>
+                    <button className="btn bg-[#007bff] text-white">View Details</button>
                     </Link>
                   </div>
                 </div>
@@ -75,7 +78,7 @@ const AllTourist = () => {
            
          
           <Link to='/'>
-      <button className="btn btn-primary mb-8 mt-8">Go Back</button>
+      <button className="btn text-center mx-auto flex items-center bg-[#007bff] text-white mb-8 mt-8">Go Back</button>
       </Link>
             <Footer></Footer>
         </div>

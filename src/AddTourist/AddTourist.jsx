@@ -47,8 +47,8 @@ const AddTourist = () => {
     return (
         <div>
           <Navbar></Navbar>
-            <form onSubmit={handleAddSpot}>
-            <div className='lg:flex'>
+            <form onSubmit={handleAddSpot} className="mx-auto lg:w-[1320px] md:w-[750px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd] p-4">
+            <div className='lg:flex mb-4'>
             <div className="form-control lg:w-1/2 ">
   <label className="label">
     <span className="label-text">Tourist Spot Name</span>
@@ -68,7 +68,7 @@ const AddTourist = () => {
   </label>
 </div>
             </div>
-            <div className='lg:flex'>
+            <div className='lg:flex mb-4'>
             <div className="form-control lg:w-1/2 ">
   <label className="label">
     Country
@@ -88,21 +88,21 @@ const AddTourist = () => {
     
  
 </div>
-            <div className="form-control lg:w-1/2 ml-4">
+            <div className="form-control lg:w-1/2 ml-4 lg:translate-y-1">
   <label className="label">
     <span className="label-text">Location</span>
   </label>
   <label className="input-group">
     
-    <input type="text" name='location' placeholder="Quantity" className="input input-bordered w-full" />
+    <input type="text" name='location' placeholder="Location" className="input input-bordered w-full" />
   </label>
 </div>
             </div>
-            <div className="form-control">
-              <p>Description</p>
-              <textarea className="border-red-500 border-[1px]" placeholder="Write A Short Description" name="description" id="" cols="30" rows="5"></textarea>
+            <div className="form-control mb-3">
+              <p className="pb-2">Description</p>
+              <textarea className="px-4 py-2 border-[1px] rounded-xl input-bordered" placeholder="Write A Short Description" name="description" id="" cols="30" rows="5"></textarea>
             </div>
-            <div className='lg:flex'>
+            <div className='lg:flex mb-3' >
             <div className="form-control lg:w-1/2 ">
   <label className="label">
     <span className="label-text">Average Cost</span>
@@ -112,7 +112,7 @@ const AddTourist = () => {
     <input type="number" name='average_cost' placeholder="Name" className="input input-bordered w-full" />
   </label>
 </div>
-            <div className="form-control lg:w-1/2 ml-4">
+            <div className="form-control lg:w-1/2 ml-4 lg:-translate-y-1">
   <label className="label">
     Seasonality
   </label>
@@ -130,7 +130,7 @@ const AddTourist = () => {
  
 </div>
             </div>
-            <div className='lg:flex'>
+            <div className='lg:flex mb-3'>
             <div className="form-control lg:w-1/2 ">
   <label className="label">
     Travel Time
@@ -147,7 +147,7 @@ const AddTourist = () => {
   
  
 </div>
-            <div className="form-control lg:w-1/2 ml-4">
+            <div className="form-control lg:w-1/2 ml-4 lg:mt-1">
   <label className="label">
     <span className="label-text">Total Visitors Per Year</span>
   </label>
@@ -157,9 +157,9 @@ const AddTourist = () => {
   </label>
 </div>
             </div>
-            <div className='lg:flex'>
+            <div className='lg:flex mb-3'>
            
-            <div className="form-control lg:w-1/2 ml-4">
+            <div className="form-control lg:w-1/2 ">
   <label className="label">
     <span className="label-text">User Name</span>
   </label>
@@ -168,7 +168,7 @@ const AddTourist = () => {
     <input type="text"  name='user_name' defaultValue={user.displayName} placeholder="Quantity" className="input input-bordered w-full" />
   </label>
 </div>
-<div className="form-control lg:w-1/2 ">
+<div className="form-control lg:w-1/2 ml-4">
   <label className="label">
     <span className="label-text">User Email</span>
   </label>
@@ -178,10 +178,10 @@ const AddTourist = () => {
   </label>
 </div>
             </div>
-            <input type="submit" value="Add" className="btn btn-primary w-full" />
+            <input type="submit" value="Add" className="btn bg-[#007bff] text-white w-full mt-3 mb-3" />
             </form>
             <Link to='/'>
-      <button className="btn btn-primary mb-8 mt-8">Go Back</button>
+      <button className="btn bg-[#007bff] text-white mb-8 mt-8 items-center mx-auto flex">Go Back</button>
       </Link>
             <Footer></Footer>
         </div>

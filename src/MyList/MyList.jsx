@@ -57,7 +57,7 @@ const MyList = () => {
             <Navbar></Navbar>
             {
                 list.map(p=>(
-                    <div key={p._id} className="overflow-x-auto mt-8">
+                    <div key={p._id} className="overflow-x-auto mt-8 ">
                     <table className="table">
                       {/* head */}
                       <thead>
@@ -74,7 +74,7 @@ const MyList = () => {
                       <tbody >
                         <tr>
                           
-                          <td className="w-[25%]"><img  src={p.image} alt="" /></td>
+                          <td className="w-32"><img  src={p.image} alt="" /></td>
                           <td>{p.tourists_spot_name}</td>
                           <td>{p.location}</td>
                           <td>{p.country_name}</td>
@@ -82,9 +82,9 @@ const MyList = () => {
                           
                           <td><Link to={`/update/${p._id}`}>
                   <button
-                   className="btn btn-primary">Update</button></Link>
+                   className="btn bg-[#007bff] text-white">Update</button></Link>
                   </td>
-                          <td><button onClick={() => handleDelete(p._id)} className="btn btn-primary">Delete</button></td>
+                          <td><button onClick={() => handleDelete(p._id)} className="btn bg-[#007bff] text-white">Delete</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -93,7 +93,7 @@ const MyList = () => {
                 ))
             }
             <Link to='/'>
-      <button className="btn btn-primary mb-8 mt-8">Go Back</button>
+      <button className="btn bg-[#007bff] text-white text-center items-center flex mx-auto mb-8 mt-8">Go Back</button>
       </Link>
          <Footer></Footer>
         </div>

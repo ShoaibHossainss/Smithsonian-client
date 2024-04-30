@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 
 const Register = () => {
@@ -50,6 +52,7 @@ const Register = () => {
     }
     return (
         <div>
+          <Navbar></Navbar>
               <form onSubmit={handleRegister} className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd]">
                 <h1 className="text-center text-black mb-2 pt-8">Register your account</h1>
       <div className="form-control px-10 pt-2" >
@@ -82,7 +85,7 @@ const Register = () => {
            <FaRegEye />
           </span>
         </div>
-        <div className="form-control mt-6 px-10 pb-4">
+        <div className="form-control mt-6 px-10 pb-8">
           <button className="btn bg-[#007bff] text-white">Register</button>
         </div>
       </form>
@@ -92,6 +95,7 @@ const Register = () => {
               </button>
               </Link></p>
       <ToastContainer />
+      <Footer></Footer>
         </div>
     );
 };

@@ -18,11 +18,19 @@ import Update from './Update/Update';
 import SpotDetails from './SpotDetails/SpotDetails';
 import Private from './Private/Private';
 import Country from './Country/Country';
+import Bangladesh from './Category/Bangladesh';
+import Cambodia from './Category/Cambodia';
+import Thailand from './Category/Thailand';
+import Malaysia from './Category/Malaysia';
+import Vietnam from './Category/Vietnam';
+import Indonesia from './Category/Indonesia';
+import Error from './Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -65,6 +73,37 @@ const router = createBrowserRouter([
         path: '/country',
         element: <Country></Country>,
         
+      },
+      {
+        path: '/bangladesh',
+        element: <Bangladesh></Bangladesh>,
+       
+        
+      },
+      {
+        path: '/cambodia',
+        element: <Cambodia></Cambodia>,
+       
+      },
+      {
+        path: '/thailand',
+        element: <Thailand></Thailand>,
+       
+      },
+      {
+        path: '/malaysia',
+        element: <Malaysia></Malaysia>,
+       
+      },
+      {
+        path: '/vietnam',
+        element: <Vietnam></Vietnam>,
+       
+      },
+      {
+        path: '/indonesia',
+        element: <Indonesia></Indonesia>,
+       
       },
       {
         path: '/update/:id',

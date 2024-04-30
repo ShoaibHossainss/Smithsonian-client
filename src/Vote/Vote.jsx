@@ -2,7 +2,7 @@ import vote from '../../src/assets/usa-today-10best-logo-2024.webp'
 
 const Vote = () => {
     return (
-        <div className='flex bg-[#165C7D] lg:w-[1320px] md:[750px] w-[365px] mx-auto rounded-2xl'>
+        <div className='flex bg-[#165C7D] lg:w-[1320px] md:[750px] w-[365px] mx-auto rounded-2xl mb-10'>
            <div className='text-center items-center mx-auto p-5'>
         <img src={vote} alt="" />
            </div>

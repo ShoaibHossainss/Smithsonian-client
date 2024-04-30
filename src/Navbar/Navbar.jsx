@@ -5,10 +5,10 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
     const links = <>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/'>Home</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/all-tourists-spot'>All Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/add-tourists-spot'>Add Tourists Spot</NavLink></li>
-             <li><NavLink className={({isActive})=>isActive ? 'border-[1px] border-solid border-[#23be0a] bg-white text-[#23be0a] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/my-list'>My List</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/'>Home</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/all-tourists-spot'>All Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/add-tourists-spot'>Add Tourists Spot</NavLink></li>
+             <li><NavLink className={({isActive})=>isActive ? 'bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-white'} to='/my-list'>My List</NavLink></li>
     </>
 
 const {user,logOut} = useContext(AuthContext)

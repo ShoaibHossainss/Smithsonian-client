@@ -82,10 +82,10 @@ const handleLogin = e =>{
 
 
     return (
-        <div className="bg-[#f3f6fd] " >
+        <div className="" >
             <Navbar></Navbar>
-            <div className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10 bg-white rounded-2xl">
-            <form   onSubmit={handleLogin} className=" ">
+            <div className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd]">
+            <form   onSubmit={handleLogin} >
       <div className="form-control px-10 pt-4">
           <label className="label">
             <span className="label-text">Email</span>
