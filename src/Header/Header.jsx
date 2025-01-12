@@ -13,9 +13,15 @@ import Slide8 from '../../src/assets/ff382bf5-6657-40fd-9920-9edeacc89273.jfif'
 import Slide9 from '../../src/assets/9e3ccfa7-ee33-4c1c-b0ff-7ee6ef6afd58.jfif'
 const Header = () => {
     return (
-        <div className=' lg:w-[1320px] md:w-[750px] w-full mx-auto rounded-2xl mt-10'>
-        <h3 className='text-center text-black text-2xl mb-4'>Spot</h3>
-        <h3 className='text-center text-black text-xl mb-4'>Here you can find some of the best tourist spot we offer</h3>
+        <div className='mx-auto rounded-2xl mt-10'>
+        <h3 className='text-center text-black text-2xl mb-4 font-semibold'>Discover Breathtaking Tourist Spots</h3>
+        <h3 className="text-center text-black text-xl mb-4">
+   Explore awe-inspiring destinations worldwide. 
+   <br />
+   Handpicked for travelers seeking unforgettable experiences.
+   <br /> 
+   Your next adventure awaits—start exploring now!
+</h3>
         <div className='px-4 pb-4 '>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper"
         spaceBetween={20}

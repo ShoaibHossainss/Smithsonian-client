@@ -85,9 +85,9 @@ const handleLogin = e =>{
     return (
         <div className="" >
           <Helmet>
-                <meta charSet="utf-8" />
+                
                 <title>Login</title>
-                <link rel="canonical" href="https://www.svgrepo.com/show/530632/airplane.svg" />
+                
             </Helmet>
             <Navbar></Navbar>
             <div className="mx-auto lg:w-[430px] md:w-[430px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd]">

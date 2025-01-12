@@ -70,7 +70,8 @@ const AddTourist = () => {
                 
             </Helmet>
           <Navbar></Navbar>
-            <form onSubmit={handleAddSpot} className="mx-auto lg:w-[1320px] md:w-[750px] w-[365px] mb-10 mt-10  rounded-2xl bg-[#f3f6fd] p-4">
+          <h3 className="text-center text-black text-2xl font-semibold mb-4 mt-10">Add New Spot</h3>
+            <form onSubmit={handleAddSpot} className="mx-auto mb-10 mt-10  rounded-2xl bg-[#f3f6fd] p-4">
             <div className='lg:flex mb-4'>
             <div className="form-control lg:w-1/2 ">
   <label className="label">

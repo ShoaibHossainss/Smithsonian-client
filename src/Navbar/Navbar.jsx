@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import logo from '../assets/smithsonian.png'
 
 const Navbar = () => {
     const links = <>
@@ -24,7 +25,7 @@ const handleLogOut = () =>{
     })
   }
     return (
-        <div className="navbar bg-[#333F48] lg:w-[1320px] md:w-[750px] w-[365px]  mx-auto">
+        <div className="navbar bg-[#333F48] mx-auto sticky top-0 shadow z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -34,7 +35,9 @@ const handleLogOut = () =>{
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl text-white">Smithsonian</a>
+          <img className="md:w-[40px] w-[30px] md:translate-x-2" src={logo} alt="" />
+         <Link to={'/'}>
+         <a className="btn btn-ghost md:text-xl text-lg text-white md:translate-x-0 -translate-x-3">Smithsonian</a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -66,7 +69,7 @@ const handleLogOut = () =>{
     <>
     <div>
     <Link to={'/login'}>
-  <button className="btn lg:mr-4 bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">Login</button>
+  <button className="btn lg:mr-4 mr-2 bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg rounded-lg">Login</button>
   </Link>
   <Link to={'/register'}>
   <button className="btn bg-[#007bff] text-white font-sans lg:font-semibold lg:text-lg  rounded-lg">Register</button>

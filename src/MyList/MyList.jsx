@@ -61,6 +61,7 @@ const MyList = () => {
                 
             </Helmet>
             <Navbar></Navbar>
+            <h3 className="text-center text-black text-2xl font-semibold mb-4 mt-10">My Added List</h3>
             {
                 list.map(p=>(
                     <div key={p._id} className="overflow-x-auto mt-8 ">

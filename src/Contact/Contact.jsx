@@ -3,7 +3,7 @@
 const Contact = () => {
     return (
         <div>
-<section className="lg:w-[1320px] md:[750px] w-[365px] mx-auto mt-10 mb-10 lg:px-30 bg-[#e5eaec]  rounded-2xl">
+<section className="mx-auto w-full mt-10 mb-10 md:px-30 bg-[#f3f6fd]  rounded-2xl">
     <div className="text-center space-y-7 px-8">
       <h2 className="text-4xl pt-4 font-extrabold text-[#131318]">Get In Touch</h2>
       <p className="text-[#41505c]">Here is all the details for contact with us.
