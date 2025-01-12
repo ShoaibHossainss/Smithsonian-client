@@ -4,7 +4,7 @@ One Of The Best Tourism Management Website
 
 Live Link
 
-Firebase : https://assignment-10-66e1f.web.app/
+https://smithsonianbd.netlify.app/
 
 Features
 
@@ -20,3 +20,5 @@ NPM Packages
 - React Helmet : Using this for hassle free experience.
 - React Tooltip: We use it for better understanding
 - Swiper Slider: Using swiper slider at header section.
+
+- ![Smithsonian Banner](https://i.ibb.co.com/JHG9f3J/localhost-5173-2.png)
